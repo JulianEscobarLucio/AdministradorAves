@@ -1,0 +1,27 @@
+<h3>{{titulo}}</h3>
+<hr>
+ <form  #formAve="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-ave">
+   
+     <label for="">Nombre común<span *ngIf="!nombreComun.valid && nombreComun.touched" class="label label-danger"> El nombre común es obligatorio</span></label>
+     <input type="text" #nombreComun="ngModel" name="nombreComun" [(ngModel)]="ave.nombreComun" class="form-control" required>
+    <br>
+
+     <label for="">Nombre cientifico<span *ngIf="!nombreCientifico.valid && nombreCientifico.touched" class="label label-danger"> El nombre cientifico es obligatorio</span></label>
+     <input type="text" #nombreCientifico="ngModel" name="nombreCientifico" [(ngModel)]="ave.nombreCientifico" class="form-control" required>
+     
+     <br>
+     <select  #selectElem (change)="setNewPais(selectElem.value)" >
+         <option value="0">Seleccione un pais..</option>
+         <option *ngFor="let pais of paises" [value]="pais.id">
+            {{pais.nombre}}
+        </option>
+    </select>
+     
+     <hr>
+     <input type="submit" value="Guardar" class="btn btn-success" [disabled]='!formAve.form.valid'>
+
+</form> 
+<br>
+
+
+
