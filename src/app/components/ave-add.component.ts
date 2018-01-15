@@ -46,9 +46,10 @@ export class AveAddComponent{
 
     }
 
-    // setNewPais(pais){
-    //     this.ave.idPais = pais;
-    // }
+     setNewPais(pais){
+         this.ave.idPais = pais;
+         console.log(this.ave.idPais);
+    }
 
     getPaises(){
         this._aveService.getPaises().subscribe(

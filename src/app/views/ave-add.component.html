@@ -10,12 +10,20 @@
      <input type="text" #nombreCientifico="ngModel" name="nombreCientifico" [(ngModel)]="ave.nombreCientifico" class="form-control" required>
      
      <br>
-     <select  #selectElem (change)="setNewPais(selectElem.value)" >
+     <!-- <select  #selectElem (change)="setNewPais(selectElem.value)" [(ngModel)]="selectedanimal" (ngModelChange)="onChange($event)" >
          <option value="0">Seleccione un pais..</option>
          <option *ngFor="let pais of paises" [value]="pais.id">
             {{pais.nombre}}
         </option>
-    </select>
+    </select> -->
+    <!-- (ngModelChange)="setNewPais($event)" -->
+
+    <select [(ngModel)]="ave.idPais"  name="idPais" >
+        <option value="0">Seleccione un pais..</option>
+        <option *ngFor="let pais of paises" [value]="pais.id">
+           {{pais.nombre}}
+       </option>
+   </select>
      
      <hr>
      <input type="submit" value="Guardar" class="btn btn-success" [disabled]='!formAve.form.valid'>

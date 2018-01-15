@@ -22,7 +22,7 @@ export class AveEditComponent{
         private _route : ActivatedRoute,
         private _router: Router
     ){
-        this.titulo = "Crear nueva ave";
+        this.titulo = "Editar  ave";
         this.ave = new Ave(0,'','',0);
     }   
 
